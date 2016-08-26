@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "移动web布局和适配"
+date:   2016-06-06
+author: sang
+authorBlog: "https://github.com/sangevan"
+tags: [share]
+excerpt_separator: "<p><strong>Javascript模块化编程：require.js"
+---
+<style>
+h2{ text-align:center; margin:40px 0;}
+</style>
+	<p><h2>页面布局</h2></p>
+    <p><h3>html页面基本结构</h3></p>
+    <p><img src="{{ site.baseurl }}/img/html.jpg"></p>  
+    <p>
+    <strong>js为什么放文档底部？</strong><br>
+    1、js加载会阻塞其它内容加载，使页面加载时间更长，尤其是js文件太大，有的页面js文件数兆/客户端网速太慢/服务器网速太慢，甚至不能访问等情况。<br> 
+    2、dom操作，页面没提前加载，dom操作会失败，报错。<br>
+    3、搜索引擎优化。
+    </p> 
+	<p><strong>Javascript模块化编程：require.js</strong> <br>
+   
+    最早的时候，所有Javascript代码都写在一个文件里面，只要加载这一个文件就够了。后来，代码越来越多，一个文件不够了，必须分成多个文件，依次加载。下面的网页代码，相信很多人都见过。</p>
+        <blockquote>
+        　　&lt;script src="1.js"&gt;&lt;/script&gt;<br>
+        　　&lt;script src="2.js"&gt;&lt;/script&gt;<br>
+        　　&lt;script src="3.js"&gt;&lt;/script&gt;<br>
+        　　&lt;script src="4.js"&gt;&lt;/script&gt;<br>
+        　　&lt;script src="5.js"&gt;&lt;/script&gt;<br>
+        </blockquote>
+    <p>
+    这段代码依次加载多个js文件，这样的写法有很大的缺点：<br>
+    首先，加载的时候，浏览器会停止网页渲染，加载文件越多，网页失去响应的时间就会越长；<br>
+    其次，由于js文件之间存在依赖关系，因此必须严格保证加载顺序（比如上例的1.js要在2.js的前面），依赖性最大的模块一定要放到最后加载，当依赖关系很复杂的时候，代码的编写和维护都会变得困难。<br>
+    </p>
+    <p><strong>require.js的诞生，就是为了解决这两个问题：<br>
+    （1）实现js文件的异步加载，避免网页失去响应；<br>
+    （2）管理模块之间的依赖性，便于代码的编写和维护。
+    </strong>
+    </p>
+    <p><h3>html页面内容布局 </h3></p>
+    <p><img src="{{ site.baseurl }}/img/layoutImg.jpg"></p>
+    <p>
+    <strong>结构合理</strong><br>
+1、从大到小、从外向内布局；<br>
+2、尽量少使用定位和浮动；<br>
+</p>
+<p>
+<strong>标签语义</strong><br>   
+1、什么是HTML语义化？<br>
+     根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。<br>
+2、为什么要语义化？<br>
+    为了在没有CSS的情况下，页面也能呈现出很好地内容结构、代码结构；<br>
+    用户体验：例如title、alt用于解释名词或解释图片信息、label标签的活用；<br>
+    有利于SEO：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息：爬虫依赖于标签来确定上下文和各个关键字的权重；<br>
+    方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以意义的方式来渲染网页；<br>
+    便于团队开发和维护，语义化更具可读性。<br>
+3、常用语义标签<br>
+    header footer nav section article aside hgroup h1-h6 address
+    </p>
+    <p></p>
+    <p><h2>屏幕适配</h2></p>
+    <p><h3>1、viewport缩放</h3></p>
+    <p><strong>适配做法：</strong>以设计稿尺寸编码页面，通过设备宽度和页面宽度的比进行页面缩放</p>
+    <p><img src="{{ site.baseurl }}/img/viewport.jpg"></p>
+    <p><strong>优点：</strong>页面编码简单，适配较好<br>
+      <strong>缺点：</strong>后台富文本编辑器编辑上传的内容需要特殊处理</p>
+      
+    <p><h3>2、弹性布局</h3></p>
+    <p><strong>适配做法：</strong>页面元素如字号行距图标等按设计稿（640）一半大小设置；关键元素高宽和位置都不变，只有容器元素在做伸缩变换，文字流式，控件弹性，图片等比缩放</p>
+    <p><img src="{{ site.baseurl }}/img/fluid.jpg"></p>
+    <p><strong>优点：</strong>较容易做到适配各种屏幕<br>
+      <strong>缺点：</strong>大屏幕的手机下显示效果不理想，元素较小；对设计有很多的限制，设计之初就需要考虑流式布局对元素造成的影响；</p>
+      
+    <p><h3>3、rem写法</h3></p>
+    <p><strong>适配做法：</strong>根据屏幕宽度设定根字体大小，页面所有元素宽高间距等使用rem</p>
+    <p><img src="{{ site.baseurl }}/img/rem.jpg"></p>
+    <p><strong>优点：</strong>可以较合理的适配各种屏幕<br>
+      <strong>缺点：</strong>转换rem需要一些计算</p>
+    
+    <p><h3>4、lib.flexible（https://github.com/amfe/lib-flexible）</h3></p>
+    <p><strong>适配做法：</strong>viewport缩放+rem写法</p>
+    <p><img src="{{ site.baseurl }}/img/flexible.jpg"></p>
+    <p><strong>优点：</strong>两者的优点<br>
+      <strong>缺点：</strong>两者的缺点</p>
+    <p>window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。<br>
+公式表示就是：window.devicePixelRatio = 物理像素 / dips<br>
+dip或dp,（device independent pixels，设备独立像素）与屏幕密度有关。dip可以用来辅助区分视网膜设备还是非视网膜设备
+</p>
+	<p><strong>以上所有屏幕适配方式，在有后台富文本编辑器编辑上传的内容的页面都要注意！<br>
+最终要达到的效果是后台富文本编辑器编辑的样式和前端页面展示的样式保持一致！</strong></p>

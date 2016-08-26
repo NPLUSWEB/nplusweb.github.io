@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "表情包的使用规则"
+date:   2016-08-01
+author: qingming
+authorBlog: "https://github.com/gengqingming"
+tags: [share]
+excerpt_separator: "<p><strong>Javascript模块化编程：require.js"
+---
+<style>
+h2{ text-align:center; margin:40px 0;}
+</style>
+	<p><h2>表情使用</h2></p>
+    <p><h3>html页面基本结构</h3></p>
+    <p><img src="{{ site.baseurl }}/img/biao.png"></p>  
+    <p>
+    <strong>表情的使用规则</strong><br>
+    1、必须引用Jquery库，因为表情库是基于jquery开发的<br> 
+    </p> 
+	<p><strong>参数说明配置说明</strong> <br>
+		baseUrl:	【字符串】表情路径的基地址<br>
+		pace:		【数字】表情弹出层淡入淡出的速度<br>
+		dir:		【数组】保存表情包文件夹名字<br>
+		text:		【二维数组】保存表情包title文字<br>
+		num:		【数组】保存表情包表情个数<br>
+		isExist:	【数组】保存表情是否加载过,对于加载过的表情包不重复请求。<br>
+		配置入下图所示：
+	
+	</p>
+	<p><img src="{{ site.baseurl }}/img/biao1.png"></p>
+	
+	<p><strong>用正则表达式解析报请的代码</strong> <br>
+		此处是使用正则表达式解析表情的代码，如下图所示：
+	
+	</p>
+	<p><img src="{{ site.baseurl }}/img/biao2.png"></p>

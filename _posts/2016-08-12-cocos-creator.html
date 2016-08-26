@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "游戏开发套件 cocos creator 简介"
+date:   2016-08-11
+author: qinbaohai
+authorBlog: "https://github.com/qinbaohai"
+tags: [study]
+excerpt_separator: '<h3>三，技术特性拓展</h3>'
+---
+<style>
+	table,th,td{
+		border:1px solid black;
+	}
+</style>
+<meta charset="utf-8">
+<h2>游戏开发套件 cocos creator 简介</h2>
+<h3>一，cocos creator 组成</h3>
+<ol>
+	<li>cocos2d-x引擎</li>
+	<li>cocos2d-js接口</li>
+	<li>cocos2d-lua接口</li>
+	<li>可视化开发界面</li>
+	<li>第三方sdk接入</li>
+	<li>cocos商城</li>
+	<li>详细的js接口文档</li>
+</ol>
+<h3>二，cocos creator 技术特性</h3>
+<ol>
+	<li>实体(节点)组件化</li>
+	<li>开发调试阶段完全脚本化</li>
+	<li>开发调试阶段数据驱动(数据-脚本 分离) 游戏核心变量随时可调(人物跳跃的高度，加速度 等 变量)</li>
+	<li>整个开发到打包发布阶段轻量化</li>
+	<li>内容生产和逻辑脚本分离的工作流(设计师和程序员分工协作互不冲突)</li>
+</ol>
+<h3>三，技术特性拓展</h3>
+<table>
+	<tr><th>实体(节点)组件化</th><td>cocos creator 并没有采用面向对象 类继承的方式来构建实体(节点),而是采用实体组件化 通过不同组件的拼合使实体达到想要的功能，因此不需要定义大量的类来开发实体功能，这也导致的代码的轻量化</td></tr>
+	<tr><th>开发调试阶段完全脚本化</th><td>cocos creator 可视化游戏开发工具(桌面软件) 采用web(html5)技术开发。游戏预览，逻辑脚本等都采用web技术，所以并不需要在开发调试阶段 对游戏工程打包编译 再预览游戏效果。游戏开发完毕，通过cocos2d-x引擎编译成native app(ios android pc mac ...)。而开发阶段完全使用js/lua脚本</td></tr>
+	<tr><th>开发调试阶段数据驱动(数据-脚本 分离) 游戏核心变量随时可调(人物跳跃的高度，加速度 等 变量)</th><td>正因为是脚本化开发方式，我们才能把游戏逻辑的一些核心变量序列化到文本里(txt json xml等)。当我们用脚本调试游戏时，重新运行脚本 脚本从保存有变量的文本里按照序列的规则获取相应的变量，然后再把这些变量应用到脚本里，这样当我们调试游戏时，我们可以修改文本里的变量值，然后重新刷新游戏，脚本重新加载。于是在不变游戏脚本的情况下 仅仅通过数据修改就可以达到调试游戏的目的。</td></tr>
+	<tr><th>整个开发到打包发布阶段轻量化</th><td>得益于高效的cocos2d-x引擎，组件化，数据驱动等方式，导致工程的打包的文件很小</td></tr>
+	<tr><th>内容生产和逻辑脚本分离的工作流(设计师和程序员分工协作互不冲突)</th><td>可以由美工生产内容构建场景然后程序员编写游戏脚本再把场景任务和逻辑串联起来，也可以有程序员先构建游戏逻辑脚本，再有美工生产内容构建场景再把逻辑脚本挂载到场景和人物上</td></tr>
+</table>
+<h3>四，cocos creator 提供了哪些功能</h3>
+<ol>
+	<li>场景编辑</li>
+	<li>节点层级管理</li>
+	<li>资源管理</li>
+	<li>动画内容生产</li>
+	<li>节点以及节点上附加的组件 属性查看/编辑(数据驱动)</li>
+	<li>跨平台打包发布 ios android pc mac web</li>
+	<li>即时预览</li>
+</ol>
+<h3>五，cocos creator 可用的资源有哪些</h3>
+<ol>
+	<li>贴图资源</li>
+	<li>图集资源</li>
+	<li>骨骼动画</li>
+	<li>动画剪辑</li>
+	<li>音频</li>
+	<li>场景</li>
+	<li>预制资源</li>
+	<li>粒子系统</li>
+</ol>

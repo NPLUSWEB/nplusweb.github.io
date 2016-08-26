@@ -1,0 +1,57 @@
+---
+layout: page
+title: Archives
+permalink: /Archives/
+---
+<div class="tabs">
+标签分类：
+{% for tag in site.tags %}
+  <a href="{{site.baseurl}}/tags/{{tag[0]}}" title="{{ tag[0] }}">
+    {{ tag[0] }}
+  </a>
+{% endfor %}
+</div>
+<section id="archive">
+  {%for post in site.posts %}
+    {% unless post.next %}
+      <h3>{{ post.date | date: '%Y' }}</h3>
+      <ul class="this">
+    {% else %}
+      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+      {% if year != nyear %}
+        </ul>
+        <h3>{{ post.date | date: '%Y' }}</h3>
+        <ul class="past">
+      {% endif %}
+    {% endunless %}
+      <li><time>{{ post.date | date:"%m月%d日 " }}</time><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+</section>
+
+<script>
+document.getElementById("top-menu").children[1].className="active";
+</script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script><script>
+document.getElementById("top-menu").children[1].className="active";
+$(function(){
+	$(".tabs a").each(function(){
+		var text=$(this).text().replace(/\s/g,"");
+		var _this=$(this);
+		if(text == "share"){
+			_this.text("技术分享");
+		}else if(text == "summary"){
+			_this.text("项目总结");
+		}else if(text == "study"){
+			_this.text("技术研究");
+		}else if(text == "stone"){
+			_this.text("他山之石");
+		}else if(text == "team"){
+			_this.text("团队活动");
+		}else if(text == "plugin"){
+			_this.text("插件");
+		}
+	})
+})
+</script>
