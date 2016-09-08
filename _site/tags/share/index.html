@@ -189,6 +189,102 @@
 			<div class="post-teaser">
 		  <header>
 		    <h1>
+            <a id="post-link-trans" class="post-link" href="/blog/gqm-webpack/">
+		        Gulp+Webpack构建前端自动化(gulp是打包工具，webpack是模块化)
+		      </a>
+		    </h1>
+		    <p id="subtitletrans" class="subtitlecontainer">
+		      <a class="subtitle">2016年08月24日</a>
+		       | <a class="subtitle" href="/About/">qingming</a>
+		       |<a class="subtitle">  <i class="fa fa-tag"></i>: <a href="/tags/share/">技术分享</a></a>
+		    </p>
+		  </header>
+		  <div class="excerpt">
+		  	<style>
+h2{ text-align:center; margin:40px 0;}
+</style>
+	
+	<p><h2>webpack的使用</h2></p>
+	<p>前端自动化的工具有很多：<br/>第一种Gulp+Webpack构建前端自动化<br/>第二种：Yeoman, Bower, Grunt构建前端自动化<br/>第三种百度和腾讯也开发过.<br/>在这里我研究的是Gulp+Webpack，如有兴趣可以研究其他的。</p>
+	<p>gulp主要做了下面几个工作：<br/>
+	1.css转化合并压缩<br/>
+	2.图片的雪碧图合并和base64<br/>
+	3.文件md5计算与替换<br/>
+	4.热启动，浏览器自动刷新<br/>
+	webpack解决了：<br/>
+	1.模块化开发<br/>
+	2.静态文件处理两大问题
+	</p>
+	<p>代码在这里(https://github.com/gengqingming)</p>
+    <p><h3>基本步骤</h3></p>
+    
+    <p>
+    <strong>第一步：安装node.js(https://nodejs.org/en/)</strong><br>
+    说明：gulp是基于node.js，所以必须安装node.js<br>
+	打开cmd<br>
+	node -v查看安装的nodejs版本，出现版本号，说明刚刚已正确安装nodejs<br>
+	npm -v查看npm的版本号<br> 
+    </p> 
+	 <p>
+    <strong>第二步：创建一个文件存放项目：webpack</strong><br>
+    cd定位到目录，用法：cd + 路径<br/>
+    </p> 
+	 <p>
+    <strong>第三步：全局安装webpack</strong><br>
+    命令如下：npm install webpack -g<br/>
+	webpack 查看是否安装证明成功了
+    </p> 
+	<p>
+    <strong>第三步：安装本地的webpack</strong><br>
+    命令如下：npm install webpack --save-dev<br/>
+	项目目录如下<br/>
+	说明：我们全局安装了webpack，项目也安装了gulp
+    </p>
+    <p>
+    <strong>第四步：创建一个package.json文件</strong><br>
+    命令如下：npm init<br/>
+	项目目录如下<br/>
+	说明：创建一个package.json文件，这是一个标准的npm说明文件，里面蕴含了丰富的信息，包括当前项目的依赖模块，自定义的脚本任务等等。在终端中使用npm init命令可以自动创建这个package.json文件
+    </p>
+    <p>
+	<strong>第五步：创建一个webpack.config.js文件</strong><br>
+	   	说明：为了快速执行webpack
+    </p>
+     <p>
+    <strong>Loader:的使用</strong><br>
+   		说明：Loaders是webpack中最让人激动人心的功能之一了。通过使用不同的loader，webpack通过调用外部的脚本或工具可以对各种各样的格式的文件进行处理，比如说分析JSON文件并把它转换为JavaScript文件，或者说把下一代的JS文件（ES6，ES7)转换为现代浏览器可以识别的JS文件。或者说对React的开发而言，合适的Loaders可以把React的JSX文件转换为JS文件。
+    </p>
+    <p>
+    <strong>Babel</strong><br>
+    命令如下：npm install  —save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react<br/>
+	项目目录如下<br/>
+	说明：用得最多的是解析Es6的babel-preset-es2015包
+    </p>
+      <p>
+    <strong>CSS:</strong><br>
+    命令如下：npm install  style-loader css-loader —save-dev<br/>
+	项目目录如下<br/>
+	说明：webpack提供两个工具处理样式表，css-loader 和 style-loader，二者处理的任务不同，css-loader使你能够使用类似@import 和 url(...)的方法实现 require()的功能,style-loader将所有的计算后的样式加入页面中，二者组合在一起使你能够把样式表嵌入webpack打包后的JS文件中。
+    </p>
+
+
+
+            <p>...</p>
+          	<p>
+		    <a class="text" href="/blog/gqm-webpack/">
+		      
+		    </a>
+		    </p>
+		  </div>
+		</div>
+        
+            
+	
+
+				
+			<div class="post-teaser">
+		  <header>
+		    <h1>
             <a id="post-link-trans" class="post-link" href="/blog/gqm-qianduanzidong/">
 		        Gulp+Webpack构建前端自动化(gulp是打包工具，webpack是模块化)
 		      </a>
