@@ -1,69 +1,31 @@
----
-layout: default
----
-<div class="home">
-	<article class="home-feature-image" >
-        <header style="background-image: url('{{ site.baseurl }}/{{site.imageurl }}')">
-        	<!--<p class="call-out-content"> {{ site.theme.header_text }} </p>-->
-        </header>
-	</article>
-
-	<div class="posts">
-	{% for post in paginator.posts %}
-		{% include post_tags_category.html %}
-		<div class="post-teaser">
-		  <header>
-		    <h1>
-		      <a id="post-link-trans" class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-		        {{ post.title }}
-		      </a>
-		    </h1>
-		    <p id="subtitletrans" class="subtitlecontainer">
-		      <a class="subtitle">{{ post.date | date: "%Y年%m月%-d日" }}</a>
-		      {% if post.author %} | <a class="subtitle" href="{{ post.authorBlog }}">{{ post.author }}</a>{% endif %}
-              {% if post.tags %} |<a class="subtitle">{{ tags_content }}</a>{% endif %}
-		    </p>
-		  </header>
-		  <div class="excerpt">
-		  	{{ post.excerpt }}
-            <p>...</p>
-          	<p>
-		    <a class="text" href="{{ post.url | prepend: site.baseurl }}">
-		      查看全文>>
-		    </a>
-		    </p>
-		  </div>
-		</div>
-		{% endfor %}
-	</div>
-
-	<div class="wp-pagenavi">
-	    <span class='pages'>第 {{ paginator.page }} 页，共 {{ paginator.total_pages }} 页</span>
-
-	    {% if paginator.previous_page %}
-	    	<a class="previouspostslink" rel="prev" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" > « </a>
-	    {% endif %}
-
-	      {% if paginator.page == 1 %}
-	        <span class="current">1</span>
-	      {% else %}
-	        <a class="page larger" href="/">1</a>
-	      {% endif %}
-	   
-	    {% for count in (2..paginator.total_pages) %}
-	        {% if count == paginator.page %}
-	          <span class="current">{{ count }}</span>
-	        {% else %}
-	          <a class="page larger" href="{{ site.baseurl }}/blog/page{{ count }}">{{ count }}</a>
-	        {% endif %}
-	    {% endfor %}
-
-	    {% if paginator.next_page %}
-	    	<a class="nextpostslink" rel="next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" > » </a>
-	    {% endif %}
-
-	</div>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NPLUS WEB</title>
+<style>
+	html,body{padding:0;margin:0;width:100%;height:100%; background:#1158bf; font-family:Arial,"微软雅黑",sans-serif;}
+	ul,li{ list-style:none;padding:0;margin:0;}
+	.warp{ text-align:center;color:#fff; width:100%;position:absolute;top:30%;left:0; z-index:2;}
+	a{color:#fff;}
+	a:hover{opacity:.7;}
+	h1{margin:0;}
+	h2{margin:20px 0;}
+	.copyright{position:fixed;left:0;bottom:10px; z-index:3;text-align:center;color:#fff;width:100%; font-size:12px;opacity:.5;}
+	#particles{opacity:.2;}
+</style>
+</head>
+<body>
+<div id="particles"></div>
+<div class="warp">
+	<h1><img src="img/nplus.png"></h1>
+    <h2>NPLUS DIGITAL 前端组博客</h2>
+    <ul>
+    	<li><a href="https://github.com/NPLUSWEB/2016/issues">2016</a></li>
+    </ul>
 </div>
-<script>
-document.getElementById("top-menu").children[0].className="active";
-</script>
+<div class="copyright">Copyright © 2016 <a href="http://www.nplusgroup.com">NPLUS DIGITAL</a> All Rights Reserved. </div>
+<script src="js/particles.min.js"></script>
+<script src="js/bg.js"></script>
+</body>
+</html>
