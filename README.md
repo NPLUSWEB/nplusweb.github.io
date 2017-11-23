@@ -1,3 +1,19 @@
+### 关于本站
+---
+本站为NPLUS Digital前端开发组技术博客。
+
+**文章分类**
+- [规范&流程](https://github.com/NPLUSWEB/nplusweb.github.io/issues?q=is%3Aissue+is%3Aopen+label%3A%E8%A7%84%E8%8C%83%26%E6%B5%81%E7%A8%8B)
+
+- [常见问题QA](https://github.com/NPLUSWEB/nplusweb.github.io/issues?q=is%3Aissue+is%3Aopen+label%3AQA)
+
+- [vue](https://github.com/NPLUSWEB/nplusweb.github.io/issues?q=is%3Aissue+is%3Aopen+label%3Avue)
+
+- [技术分享](https://github.com/NPLUSWEB/nplusweb.github.io/issues?q=is%3Aissue+is%3Aopen+label%3A%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB)
+
+- [项目总结](https://github.com/NPLUSWEB/nplusweb.github.io/issues?q=is%3Aissue+is%3Aopen+label%3A%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93)
+
+
 ### 关于我们
 ---
 <p>NPLUS Digital是中国领先的基于新技术及新思维的创新营销咨询服务商，成立于2010年，主要办公室位于北京、无锡和上海，并拥有广泛的合作伙伴网络。</p>
@@ -17,7 +33,3 @@
 
 商务：business@nplusgroup.com
 
-
-### 关于本站
----
-本站为NPLUS前端开发组技术博客，主要记录公司内部的技术分享和项目总结等内容（转载请注明出处）。
