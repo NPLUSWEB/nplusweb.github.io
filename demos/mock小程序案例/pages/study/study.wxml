@@ -1,0 +1,6 @@
+<view class="container">
+  <view class='box'>
+    <text id='the-id'>{{text}}</text>
+  </view>
+  <canvas style="width: 300px; height: 300px;" canvas-id="firstCanvas"></canvas>
+</view>

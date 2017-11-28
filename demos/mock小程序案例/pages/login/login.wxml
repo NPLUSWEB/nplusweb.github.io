@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="top"></view>
+  <view class="login-form">
+    <input placeholder="请输入账号" type="idcard" class="id" maxlength="18" bindinput="bindIdentity" value="{{identity}}"></input>
+    <input placeholder="请输入密码" type="text" class="password" password="true" bindinput="bindPassword"></input>
+    <button bindtap="login" hover-class="none">登录</button>
+  </view>
+</view>

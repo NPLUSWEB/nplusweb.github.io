@@ -1,0 +1,7 @@
+<view class="container detail-page">
+  <view class="detail">
+    <text class="tit">{{noticesInfo.title}}</text>
+    <text class="date">{{noticesInfo.date}}</text>
+    <rich-text class="con">{{noticesInfo.content}}</rich-text>
+  </view>
+</view>

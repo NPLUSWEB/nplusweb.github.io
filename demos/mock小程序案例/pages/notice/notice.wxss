@@ -1,0 +1,61 @@
+page{
+  background: #e8f1ef;
+}
+text,image{display: block;}
+.notice{
+  padding: 0 40rpx;
+}
+.notice .item {
+    padding: 20rpx 0;
+}
+.box{
+  background: #fff;
+}
+.notice .top-date {
+    margin-bottom: 20rpx;
+    text-align: center;
+}
+
+.notice .top-date view {
+    display: inline-block;
+    border-radius: 5rpx;
+    padding: 10rpx 20rpx;
+    font-size: 24rpx;
+    color: #fff;
+    background: #d4d4d4;
+}
+
+.notice .box {
+    border: 1rpx solid #dcdcdc;
+    padding: 20rpx;
+    background: #fff;
+}
+
+.notice .tit {
+    font-size: 32rpx;
+    color: #363636;
+}
+
+.notice .date {
+    margin-top: 5rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.notice .cover {
+    margin: 10rpx 0;
+    width: 100%;
+}
+
+.notice .info {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.notice .more {
+    display: block;
+    margin-top: 20rpx;
+    font-size: 30rpx;
+    color: #363636;
+    padding: 10rpx 0;
+}

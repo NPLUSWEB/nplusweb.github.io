@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container home">
+  <view class="head">
+    <image class="user-head" src="{{userInfo.headImage}}" background-size="cover"></image>
+    <text class="user-name">{{userInfo.userName}}</text>
+    <view class="user-level">
+        <view wx:for="{{[1, 2, 3, 4, 5]}}" wx:key="*this" class="{{index < userInfo.starLevel ? 'on':''}}"></view>
+      </view>
+      <view class="to-user-space" bindtap="toPersonalCenter">个人中心</view>
+      <view class="choose-duty fixed">
+        <view class="{{userType == 1 ? 'on':''}}" data-type="1" bindtap="chooseUserType" hover-class="none">O小麦</view>
+        <view class="{{userType == 2 ? 'on':''}}" data-type="2" bindtap="chooseUserType" hover-class="none">O小队</view>
+      </view>
+  </view>
+  <view class="menu">
+    <button bindtap="toNotice" hover-class="none">公司公告</button>
+    <button bindtap="toCheck" hover-class="none">工作考勤</button>
+    <button bindtap="toStudy" hover-class="none">学习考试</button>
+    <button bindtap="toFeedBack" hover-class="none">反馈建议</button>
+  </view>
+</view>

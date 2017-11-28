@@ -1,0 +1,14 @@
+<view class="container notice">
+  <view class="item" wx:for="{{notices}}" wx:key="*this">
+    <navigator hover-class="none" url="../noticeInfo/noticeInfo?id={{item[0]}}">
+      <view class="top-date"><view>{{item[4]}}</view></view>
+      <view class="box">
+        <text class="tit">{{item[1]}}</text>
+        <text class="date">{{item[4]}}</text>
+        <image class="cover" src="{{item[3]}}"></image>
+        <text class="info">{{item[2]}}</text>
+        <text class="more">查看全文</text>
+      </view>
+    </navigator>
+  </view>
+</view>

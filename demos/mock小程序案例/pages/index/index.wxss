@@ -1,0 +1,239 @@
+/**index.wxss**/
+page{
+  background: #e8f1ef;
+}
+.home .head {
+    position: relative;
+    margin-bottom: 110rpx;
+    padding-top: 35rpx;
+    width: 100%;
+    height: 370rpx;
+    text-align: center;
+    color: #fff;
+    background: #21d092;
+    background-size: 100%;
+}
+
+.home .user-head {
+    display: block;
+    margin: 0 auto;
+    border: 5rpx solid rgba(255, 255, 255, .3);
+    border-radius: 50%;
+    width: 168rpx;
+    height: 168rpx;
+}
+
+.home .user-name {
+    margin-top: 20rpx;
+    margin-bottom: 5rpx;
+    color: #fff;
+    display: block;
+}
+
+.home .user-level {
+    font-size: 0;
+    text-align: center;
+}
+
+.home .user-level view {
+    display: inline-block;
+    margin: 0 3rpx;
+    width: 26rpx;
+    height: 26rpx;
+    background: url(http://html.nplusgroup.com/html/sanghb/wxxcx/img/star.png) no-repeat;
+    background-position: 0 0;
+    background-size: 26rpx auto;
+}
+
+.home .user-level view.on {
+    background-position: 0 -26rpx;
+}
+
+.home .to-user-space {
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+    width: 60rpx;
+    height: 50rpx;
+    background: url(http://html.nplusgroup.com/html/sanghb/wxxcx/img/user.png) no-repeat center center;
+    background-size: 57rpx auto;
+    overflow: hidden;
+    text-indent: 100rpx;
+}
+
+
+.home .choose-duty {
+    position: absolute;
+    bottom: -80rpx;
+    left: 30rpx;
+    border-radius: 20rpx;
+    padding: 30rpx 0;
+    width: 690rpx;
+    color: #666;
+    background: #fff;
+    box-shadow: 0 0 5rpx rgba(7, 114, 93, .15);
+    display: flex;
+}
+
+.home .choose-duty view {
+    cursor: pointer;
+    width: 50%;
+    position: relative;
+    padding-top: 45rpx;
+    font-size: 30rpx;
+}
+.home .choose-duty view:nth-child(1){
+  border-right: 1rpx solid #dcdcdc;
+}
+.home .choose-duty view::after{
+  display: block;
+  content: "";
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -20rpx;
+  background: url(http://html.nplusgroup.com/html/sanghb/wxxcx/img/radio.png) no-repeat;
+  background-size: 40rpx auto;
+}
+.home .choose-duty view.on::after{
+  background-position: 0 -40rpx;
+}
+
+.home .choose-duty li em {
+    display: block;
+    margin: 0 auto;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.home .choose-duty li.on em {
+    background-position: 0 -40rpx;
+}
+
+.home .menu {
+    margin: 0 auto;
+    border-radius: 20rpx;
+    padding: 40rpx;
+    width: 610rpx;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 0 5rpx rgba(7, 114, 93, .15);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home .menu button {
+  width: 50%;
+  background: #fff;
+  border-color: transparent;
+  font-size: 32rpx;
+  position: relative;
+  padding: 95rpx 0 35rpx;
+  border-radius: 0;
+  color: #666;
+}
+.home .menu button:nth-child(1),
+.home .menu button:nth-child(2){
+  border-bottom: 1rpx solid #dcdcdc;
+}
+.home .menu button:nth-child(1),
+.home .menu button:nth-child(3){
+  border-right: 1rpx solid #dcdcdc;
+}
+.home .menu button:after{
+  display: block;
+  content: "";
+  width: 60rpx !important;
+  height: 60rpx !important;
+  position: absolute !important;
+  top: 35rpx;
+  left: 50%;
+  margin-left: -30rpx !important;
+  background: url(http://html.nplusgroup.com/html/sanghb/wxxcx/img/ico1.png) no-repeat;
+  background-size: 60rpx auto;
+  border: 0 none;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  border-radius: 0;
+}
+.home .menu button:nth-child(1):after{
+  background: url(http://html.nplusgroup.com/html/sanghb/wxxcx/img/ico1.png) no-repeat;
+  background-size: 60rpx auto;
+}
+.home .menu button:nth-child(2):after{
+  background: url(http://html.nplusgroup.com/html/sanghb/wxxcx/img/ico2.png) no-repeat;
+  background-size: 60rpx auto;
+}
+.home .menu button:nth-child(3):after{
+  background: url(http://html.nplusgroup.com/html/sanghb/wxxcx/img/ico3.png) no-repeat;
+  background-size: 60rpx auto;
+}
+.home .menu button:nth-child(4):after{
+  background: url(http://html.nplusgroup.com/html/sanghb/wxxcx/img/ico4.png) no-repeat;
+  background-size: 60rpx auto;
+}
+
+.home .menu li .point {
+    display: block;
+    width: 14rpx;
+    height: 14rpx;
+    border-radius: 50%;
+    background: #ff434c;
+    position: absolute;
+    top: 45rpx;
+    right: 110rpx;
+}
+
+.home .menu li:nth-child(1) a {
+    border-right: 1rpx solid #dcdcdc;
+    border-bottom: 1rpx solid #dcdcdc;
+}
+
+.home .menu li:nth-child(2) a {
+    border-bottom: 1rpx solid #dcdcdc;
+}
+
+.home .menu li:nth-child(3) a {
+    border-right: 1rpx solid #dcdcdc;
+}
+
+.home .menu li a {
+    display: block;
+    padding-top: 45rpx;
+    height: 165rpx;
+}
+
+.home .menu li em {
+    display: block;
+    margin: 0 auto 15rpx;
+    width: 56rpx;
+    height: 56rpx;
+}
+
+.home .menu li:nth-child(1) em {
+    background: url(../img/ico1.png) no-repeat center center;
+    background-size: 56rpx auto;
+}
+
+.home .menu li:nth-child(2) em {
+    background: url(../img/ico2.png) no-repeat center center;
+    background-size: 56rpx auto;
+}
+
+.home .menu li:nth-child(2) em.grey {
+    background: url(../img/ico2grey.png) no-repeat center center;
+    background-size: 56rpx auto;
+    color: #666;
+}
+
+.home .menu li:nth-child(3) em {
+    background: url(../img/ico3.png) no-repeat center center;
+    background-size: 56rpx auto;
+}
+
+.home .menu li:nth-child(4) em {
+    background: url(../img/ico4.png) no-repeat center center;
+    background-size: 56rpx auto;
+}

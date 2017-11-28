@@ -1,0 +1,25 @@
+text,rich-text{
+  display: block;
+}
+.detail-page .detail {
+    padding: 20rpx;
+    color:#666;
+}
+
+.detail-page .tit {
+    font-size: 32rpx;
+    color: #363636;
+}
+
+.detail-page .date {
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.detail-page .con {
+    margin-top: 20rpx;
+    border-top: 1rpx solid #dcdcdc;
+    padding-top: 20rpx;
+    font-size: 30rpx;
+}
