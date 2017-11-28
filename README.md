@@ -1,6 +1,6 @@
 ### 关于本站
 ---
-本站为NPLUS Digital前端开发组技术博客。
+本站为NPLUS Digital前端开发组技术博客
 
 **文章分类**
 - [规范&流程](https://github.com/NPLUSWEB/nplusweb.github.io/issues?q=is%3Aissue+is%3Aopen+label%3A%E8%A7%84%E8%8C%83%26%E6%B5%81%E7%A8%8B)
