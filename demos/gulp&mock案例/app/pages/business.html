@@ -1,0 +1,102 @@
+@@include('include/head.html')
+<body>
+    @@include('include/header.html')
+    <div class="warp">
+    	<div class="business">
+			<div class="estate-dev" id='estate'>
+				<div class="con-wid"  ms-controller="asset">
+					<div class="tit">
+						<img src='img/page3-tit1.png'>
+					</div>
+					<div class="fl">
+						<ul>
+							<li class='on'>全部类型</li>
+							<li>写字楼</li>
+							<li>商务中心</li>
+							<li>商场</li>
+							<li>服务式公寓</li>
+							<li>酒店</li>
+						</ul>
+					</div>
+					<div class="fr">
+						<div class="map liaoning"><span><i>沈阳</i></span></div>
+						<div class="map shandong"><span><i>青岛</i></span></div>
+						<div class="map jiangsu"><span class='nj'><i>南京</i></span><span class='sz'><i>苏州</i></span></div>
+						<div class="map shanghai"><span><i>上海</i></span></div>
+						<div class="map jiangxi"><span><i>南昌</i></span></div>
+					</div>
+				</div>
+			</div>
+			<div class="public-tit" id='asset'>
+				<img src='img/page3-tit2.png'>
+			</div>
+			<div class="asset-manage" ms-controller="asset">
+				<div class="fl">
+					<div class='con'>
+						<div class="conx" ms-html='@assets.summary'>
+							{{@assets.summary}}
+						</div>
+						<a ms-attr="{href:'about-details.html?id='+ @assets.id+'&type=4'}">了解更多 ></a>
+					</div>
+				</div>
+				<div class="fr">
+					<img src='img/page3-img1.jpg'>
+				</div>
+			</div>
+			<div class="public-tit pro-tit" id='property'>
+				<img src='img/page3-tit3.png'>
+			</div>
+			<div class="property-ser"  ms-controller="property">
+				<div class="fl">
+					<img src='img/page3-img2.jpg'>
+				</div>
+				<div class="fr">
+					<div class='con'>
+						<div class="conx" ms-html='@propertys.summary'>
+							{{@propertys.summary}}
+						</div>
+						<a ms-attr="{href:'about-details.html?id='+ @propertys.id+'&type=5'}">了解更多 ></a>
+					</div>
+				</div>
+			</div>
+    	</div>
+    </div>
+    <div class="poup-estate" ms-controller="estate">
+		<i class='es-close'></i>
+		<div class="tit"><span>青岛</span>项目一览</div>
+		<div class="con">
+			<ul>
+				<li  ms-for="el in @estates">
+					<a  ms-attr="{href:'business-details.html?id='+ el.id}">
+						<p class="fl">{{el.item_title}}</p>
+						<p class="fr">{{el.item_address}}</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+    </div>
+    <div class="popup"></div>
+	@@include('include/footer.html')
+	<script>
+		$(function(){
+			$('.estate-dev .fl li').click(function(){
+				$(this).addClass("on").siblings("li").removeClass("on");
+			})
+			$('.es-close').click(function(){
+				$(".popup").fadeOut();
+				$(this).parent(".poup-estate").fadeOut();
+				$(".map").removeClass("on")
+			})
+			$('.popup').click(function(){
+				$(".popup").fadeOut();
+				$(".poup-estate").fadeOut();
+				$(".map").removeClass("on")
+			})
+		})
+	</script>
+	<script src="js/business.js"></script>
+</body>
+<script>
+    $('#NavBus').addClass('active')
+</script>
+</html>

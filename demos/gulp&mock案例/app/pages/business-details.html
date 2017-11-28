@@ -1,0 +1,104 @@
+@@include('include/head.html')
+<body>
+    @@include('include/header.html')
+    <div class="warp" ms-controller='businessD'>
+        <div class="banner-n">
+            <img src='img/page3d-banner.jpg'>
+        </div>
+    	<div class="crumbs con-wid">
+    		<a href="index.html">首页</a> &gt; 
+    		<a href="business.html">多元业务  </a> &gt; 
+    		<a href="business.html"> 地产开发</a> &gt; 
+    		<em>{{@businesDw.item_title}}</em>
+    	</div>
+    	<div class="page-tit con-wid">{{@businesDw.item_title}}</div>
+    	<div class="bus-details con-wid fixed">
+            <div class="fl">
+        		<div class="tit">
+        			<h3>项目简介</h3>
+        		</div>
+        		<div class="details" ms-html='@businesDw.item_summary'>
+        			{{@businesDw.item_summary}}
+        		</div>
+            </div>
+            <div class="fr">
+                <div class="tit">项目基本信息</div>
+                <div class="con">
+                    <p ms-for='($index, el) in @listBuss'>
+                        {{el.title}}：{{el.description}}
+                    </p>
+                    <div :visible="@businesDw.status">
+                        <p ms-for='($index, el) in @listBussUrl'>
+                            {{el.title}}：<br><a ms-attr="{href:el.description}"><span>{{el.description}}</span></a>
+                        </p>
+                    </div>
+                    <div class='er-btn' ms-if='@businesDw.item_wechat_pic_url!=""'>
+                        <img src='img/page3d-img2.png'>
+                        <div class="er-wh">
+                            <div class="er"><img ms-attr='{src:@businesDw.item_wechat_pic_url}'><span>扫描二维码关注</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    	</div>
+        <div class="img-show fixed">
+            <div class="con-wid">
+                <ul class='tit fixed'>
+                    <li class='on'><span>全部图片</span></li>
+                    <li><span>效果图</span></li>
+                    <li><span>实景图</span></li>
+                    <li><span>平面图</span></li>
+                </ul>
+            </div>
+            <span class='leftbtn'></span>
+            <div class="htmleaf-container">
+                <div class="htmleaf-content">
+                    <ul>
+                        <li class='p-img' ms-for='el in @data'><p><a class="group4"  ms-attr="{href:el}" title=""><img ms-attr="{src:el}"></a></p></li>
+                    </ul>
+                </div>
+            </div>
+            <span class='rightbtn'></span>
+        </div>
+    </div>
+	@@include('include/footer.html')
+    <style>
+        body{
+            background: #fff;
+        }
+    </style>
+
+<script src="js/business-detail.js"></script>
+<script src="js/jquery.colorbox.js"></script>
+<script>
+    var ida=GetQueryString("id");
+    // console.log(ida,typea)
+    getbusinessD(ida);
+    
+</script>
+<script>
+    $(function(){
+        $(".img-show .tit li").click(function(){
+            $(this).addClass("on").siblings("li").removeClass("on")
+            var text=$(this).text();
+            if(text=='效果图'){
+                businessD.data = businessD.xiaoguo_pics_args;
+                timeline()
+            }else if(text=='实景图'){
+                businessD.data = businessD.shijing_pics_args;
+                 timeline()
+            }else if(text=='平面图'){
+                businessD.data = businessD.pingmian_pics_args;
+                 timeline()
+            }else if(text=='全部图片'){
+                businessD.data = businessD.businessDs;
+                 timeline()
+            }
+        })
+        $('#NavBus').addClass('active')
+    })
+
+
+</script>
+</body>
+</html>

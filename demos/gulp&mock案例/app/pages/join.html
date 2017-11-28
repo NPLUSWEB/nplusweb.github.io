@@ -1,0 +1,91 @@
+@@include('include/head.html')
+<body>
+@@include('include/header.html')
+<div class="join-us warp">
+    <div class="item" id="joinUs">
+        <div class="tit">
+            <div class="big-title">
+                <img src="img/join-tit1.png" alt="">
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        <div class="join-con">
+            <img src="img/join-cover1.png" alt="">
+            <div class="join-enter">
+                <div class="big-tit">加入新地</div>
+                <div class="sm-tit">坚持标准 | 创作价值</div>
+                <a href="" class="join-btn">社会招聘</a>
+            </div>
+        </div>
+    </div>
+    <div class="item" id="recInfo">
+        <div class="tit">
+            <div class="big-title">
+                <img src="img/join-tit2.png" alt="">
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        <div class="join-detail">
+            <ul class="list-group">
+                <li class="list-item">
+                    <img src="img/join-1.png" alt="">
+                </li>
+                <li class="list-item">
+                    <img src="img/join-2.png" alt="">
+                    <a href="" class="more">了解更多></a>
+                </li>
+                <li class="list-item">
+                    <img src="img/join-3.png" alt="">
+                </li>
+                <li class="list-item">
+                    <img src="img/join-4.png" alt="">
+                </li>
+                <li class="list-item">
+                    <img src="img/join-5.png" alt="">
+                </li>
+                <li class="list-item">
+                    <img src="img/join-6.png" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="item" id="staefDev">
+        <div class="tit">
+            <div class="big-title">
+                <img src="img/join-tit3.png" alt="">
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        <div class="join-con">
+            <img src="img/join-cover2.png" alt="">
+        </div>
+        <div class="slogan">
+            <div class="tit">人力资源部：</div>
+            <div class="text">创新改变世界，激情成就未来，每一次工作的自我超越，都是让生活过得更美好。</div>
+        </div>
+        <div class="join-swiper" ms-controller="joinUs">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" ms-for="el in @joinPic">
+                        <a ms-attr="{href:'news-details.html?id='+@el.id+'&type=4'}">
+                            <div class="img">
+                                <img ms-attr="{src:@el.picUrl}" alt="">
+                            </div>
+                            <div class="join-slogan">{{@el.title}}</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('include/footer.html')
+</body>
+<script src="js/swiper-3.4.2.jquery.min.js"></script>
+<script src="js/joinUs.js"></script>
+<script>
+    $('#NavJoin').addClass('active')
+</script>
+</html>

@@ -1,0 +1,55 @@
+@@include('include/head.html')
+<body>
+    @@include('include/header.html')
+    <div class="warp"  ms-controller="aboutD">
+    	<div class="crumbs con-wid">
+    		<a href="index.html">首页</a> &gt; 
+    		<a class='lo' href="about.html">关于新地</a> &gt; 
+    		<span><a href="javascript:void(0)">董事长致辞</a></span>
+    	</div>
+    	<div class="page-tit con-wid">{{@aboutDs.title}}</div>
+    	<div class="about-details con-wid fixed">
+			<div>
+    			<img class='imghide' src="img/page2d-img.jpg" alt="">
+	    		<div class="con" ms-html='@aboutDs.content'>
+					{{@aboutDs.content}}
+				</div>
+			</div>
+    	</div>
+    </div>
+	@@include('include/footer.html')
+	<script src="js/about-detail.js"></script>
+
+	<script>
+		$(function(){
+		    // $('#NavAbout').addClass('active');
+		    $(".imghide").hide();
+	            var ida=GetQueryString("id");
+	            var typea=GetQueryString("type");
+	            if(typea==1){
+	                $(".crumbs span a").html('集团简介')
+	                $('#NavAbout').addClass('active');
+	                $(".about-details").children('div').addClass("about");
+	                $(".about-details").find('.imghide').show();
+	            }else if(typea==2){
+	                 $(".crumbs span a").html('董事长致辞')
+	                 $('#NavAbout').addClass('active');
+	            }else if(typea==3){
+	                 $(".crumbs span a").html('企业文化')
+	                 $('#NavAbout').addClass('active');
+	            }else if(typea==4){
+	            	$(".crumbs .lo").html('多元业务');
+	            	$(".crumbs .lo").attr("href",'business.html')
+	            	$(".crumbs span a").html('资产管理')
+	            	$('#NavBus').addClass('active');
+	            }else if(typea==5){
+	            	$(".crumbs .lo").html('多元业务');
+	            	$(".crumbs .lo").attr("href",'business.html')
+	            	$(".crumbs span a").html('物业管理')
+	            	$('#NavBus').addClass('active');
+	            }
+	        getaboutD(ida)
+		})
+	</script>
+</body>
+</html>

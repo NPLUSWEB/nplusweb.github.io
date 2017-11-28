@@ -1,0 +1,118 @@
+@@include('include/head.html')
+<body>
+    @@include('include/header.html')
+    <div class="warp">
+    	<div class="abouts">
+			<div class="banner-n">
+				<img src='img/page2-banner.jpg'>
+			</div>
+			<div class="public-tit" id="about">
+				<img src='img/page2-tit1.png'>
+			</div>
+			<div class="about con-wid" ms-controller="about">
+				<div class="con">
+					<div>
+						<p ms-html='@abouts.summary'>{{@abouts.summary}}</p>
+						<a ms-attr="{href:'about-details.html?id='+ @abouts.id+'&type=1'}">了解更多 ></a>
+					</div>
+				</div>
+			</div>
+			<div class="public-tit" id='chairman'>
+				<img src='img/page2-tit2.png'>
+			</div>
+			<div class="chairman"  ms-controller="chairman">
+				<div class="con-wid">
+					<img class='fl' ms-attr="{src:@chairmans.picUrl}">
+					<div class="con fl">
+						<p ms-html='@chairmans.summary'>{{@chairmans.summary}}</p>
+						<a ms-attr="{href:'about-details.html?id='+ @chairmans.id+'&type=2'}">了解更多 ></a>
+						<img class='fr' src='img/page2-img2.jpg'>
+					</div>
+				</div>
+			</div>
+			<div class="public-tit" id='development'>
+				<img src='img/page2-tit3.png'>
+			</div>
+			<div class="development">
+				<span class='leftbtn'></span>
+				<div class="img-lr"><img src='img/page2-img3.jpg'></div>
+				<span class='rightbtn'></span>
+			</div>
+			<div class="public-tit" id='corporate'>
+				<img src='img/page2-tit4.png'>
+			</div>
+			<div class="corporate"  ms-controller="corporate">
+				<div class="w1200">
+					<div class="fl"><img src='img/page2-img4.jpg'></div>
+					<div class="fr">
+						<p ms-html='@corporates.summary'>{{@corporates.summary}}</p>
+						<a ms-attr="{href:'about-details.html?id='+ @corporates.id+'&type=3'}">了解更多 ></a>
+					</div>
+				</div>
+			</div>
+			<div class="public-tit" id='soclal'>
+				<img src='img/page2-tit5.png'>
+			</div>
+			<div class="soclal-res con-wid">
+				<ul>
+					<li><a href="soclal-details.html"><img src='img/page2-img5.jpg'><p>社会公益</p></a></li>
+					<li><a href="environ-details.html"><img src='img/page2-img6.jpg'><p>环保事业</p></a></li>
+				</ul>
+			</div>
+			<div class="public-tit" id='company'>
+				<img src='img/page2-tit6.png'>
+			</div>
+			<div class="company" ms-controller="company">
+				<div class="con-wid">
+					<div id='a1'></div>
+					<div class="rCon">
+						<div class="content mCustomScrollbar">
+						    <div class="sp-thumbnail"  ms-for='el in @companys'>
+						      <div class="img"> <span class='sp1'>{{el.linkUrl}}</span><img class="sp-thumbnail-image" ms-attr="{src:el.picUrl}"/></div>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+    	</div>
+    </div>
+	@@include('include/footer.html')
+</body>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="ckplayer/ckplayer.js" charset="utf-8"></script>
+<script>
+    $('#NavAbout').addClass('active');
+    $(function(){
+		// $('.sp-thumbnails .sp2').hide();
+    	timeline();
+    	$(window).resize(function() {
+    		timeline();
+    	});
+    	function timeline(){
+	    	var winW = $(window).width();
+	    	if(winW <= 1000){
+	    		winW = 1000;
+	    	}
+	    	//$(".development").css({"width":winW+"px"})
+    			
+	    	$(".rightbtn").click(function(){
+	    		var this_left = $(".img-lr img").position().left-500;
+	    		if(Math.abs(this_left) >= 4538-winW){
+	    			this_left = -(4538-winW);
+	    		}
+	    		console.log(this_left)
+	    		$(".img-lr img").stop().animate({"left":this_left+"px"},1000);
+	    	})
+	    	$(".leftbtn").click(function(){
+	    		var this_left = $(".img-lr img").position().left+500;
+	    		if(this_left >=0 ){
+	    			this_left = 0;
+	    		}
+	    		console.log(this_left)
+	    		$(".img-lr img").stop().animate({"left":this_left+"px"},1000);
+	    	})
+    	}
+    }) 
+</script>
+<script src="js/about.js"></script>
+</html>

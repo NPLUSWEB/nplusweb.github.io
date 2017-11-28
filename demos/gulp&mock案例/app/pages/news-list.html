@@ -1,0 +1,145 @@
+@@include('include/head.html')
+<body>
+@@include('include/header.html')
+<div class="warp news-list" ms-controller="newsList">
+    <div class="crumbs con-wid">
+        <a href="javascript:void(0)">首页</a> &gt;
+        <a href="news.html">新闻中心</a> &gt;
+        <em>{{@type}}</em>
+    </div>
+    <div class="page-tit con-wid">{{@type}}</div>
+    <div class="top-news">
+        <div class="top-news-cover">
+            <img ms-attr="{src:@newsListSingle.picUrl}" alt="">
+        </div>
+        <div class="top-news-detail">
+            <div class="date-box">
+                <p class="day">{{@newsListSingle.day}}</p>
+                <p class="year-month">{{@newsListSingle.year}}/{{@newsListSingle.month}}</p>
+            </div>
+            <div class="news-detail">
+                <p class="tit news-detail-tit">{{@newsListSingle.title}}</p>
+                <p class="sm-tit news-detail-summary">{{@newsListSingle.summary}}</p>
+                <div class="more"><a ms-attr="{href:'news-details.html?id='+@newsListSingle.id+'&type='+@artType}">了解更多></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="list con-wid">
+        <ul>
+            <li ms-for="el in @newsListGroup">
+                <a ms-attr="{href:'news-details.html?id='+@el.id+'&type='+@artType}">
+                    <div class="date-box">
+                        <p class="day">{{@el.day}}</p>
+                        <p class="year-month">{{@el.year}}/{{@el.month}}</p>
+                    </div>
+                    <div class="img">
+                        <img ms-attr="{src:@el.picUrl}" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="tit news-list-title">{{@el.title}}</div>
+                        <div class="text news-list-text" ms-html="@el.summary"></div>
+
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="page"></div>
+</div>
+<style>
+    #page {
+        height: 50px;
+        display: table;
+        margin: 0 auto;
+    }
+
+    .page {
+        text-align: center;
+    }
+
+    .fl {
+        float: left;
+    }
+
+    .fr {
+        float: right;
+    }
+
+    .pagingUl {
+        float: right;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        height: 30px;
+    }
+
+    .pagingUl li {
+        float: left;
+        width: 30px;
+        height: 30px;
+        background: none;
+        text-align: center;
+        margin-right: 5px;
+        border-radius: 50px
+    }
+
+    .pagingUl li a {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 28px;
+        color: #666;
+        font-size: 12px;
+        border-radius: 50px
+    }
+
+    .prv,
+    .next {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+        background: none;
+        border-radius: 50px;
+    }
+
+    .prv {
+        margin-right: 10px;
+    }
+
+    .first,
+    .last {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+        text-align: center;
+        line-height: 30px;
+        /*border: 1px solid #ddd;*/
+        cursor: pointer;
+        background: #fff;
+        padding: 0 5px;
+        border-radius: 5px;
+        margin-right: 10px;
+        display: none
+    }
+
+    .prv:hover,
+    .next:hover,
+    .first:hover,
+    .last:hover,
+    .pagingUl li a:hover,
+    .activP {
+        background-color: #c59d57!important;
+        color: #fff!important;
+    }
+</style>
+@@include('include/footer.html')
+</body>
+<script src="js/jquery.page.js"></script>
+<script src="js/newsList.js"></script>
+<script>
+    $('#NavNews').addClass('active')
+</script>
+</html>

@@ -1,0 +1,142 @@
+@@include('include/head.html')
+<body>
+    @@include('include/header.html')
+    <div class="warp news" ms-controller="news">
+    	<div class="con-wid first fixed">
+    		<div class="imgl"><img ms-attr="{src:@comNews.picUrl}"></div>
+    		<div class="info">
+    			<div class="title news-title">{{@comNews.title}}</div>
+    			<div class="text news-text">
+                    {{@comNews.summary}}
+    			</div>
+    			<a class="more" ms-attr="{href:'news-details.html?id='+@comNews.id+'&type=1'}"></a>
+    		</div>
+    	</div>
+    	<div class="con-wid item" id="companyNews">
+    		<div class="tit">
+    			<div class="big-title">
+                    <img src="img/news-tit1.png" alt="">
+                </div>
+                <div class="arrow-down"></div>
+    			<ul class="list-group fixed">
+    				<li ms-for="el in @comNewsGroup | limitBy(3) as items">
+                        <a ms-attr="{href:'news-details.html?id='+el.id+'&type=1'}">
+        					<div class="img">
+                                <img ms-attr="{src:el.picUrl}" alt="">
+                            </div>
+        					<div class="info">
+        						<div class="title news-list-title">{{@el.title}} </div>
+        						<div class="text news-list-text">
+        							{{@el.summary}}
+        						</div>
+        					</div>
+                        </a>
+    				</li>
+                    <!--<li>-->
+                        <!--<a href="news-details.html">-->
+                            <!--<div class="img">-->
+                                <!--<img src="img/pic.png" alt="">-->
+                            <!--</div>-->
+                            <!--<div class="info">-->
+                                <!--<div class="title">我心目中的地产好公司 </div>-->
+                                <!--<div class="text">-->
+                                    <!--新地集团董事长漆洪波接受了新浪乐居的专访，讲述了自己心目中的“地产好公司”标准以及一个企业家角度的生意之道。-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="news-details.html">-->
+                            <!--<div class="img">-->
+                                <!--<img src="img/pic.png" alt="">-->
+                            <!--</div>-->
+                            <!--<div class="info">-->
+                                <!--<div class="title">我心目中的地产好公司 </div>-->
+                                <!--<div class="text">-->
+                                    <!--新地集团董事长漆洪波接受了新浪乐居的专访，讲述了自己心目中的“地产好公司”标准以及一个企业家角度的生意之道。-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</li>-->
+    			</ul>
+    			<div class="more"><a ms-attr="{href:'news-list.html?newsType=6&type=1'}">查看更多&gt;</a></div>
+    		</div>
+    	</div>
+    	<div class="con-wid item" id="project">
+            <div class="tit">
+                <div class="big-title">
+                    <img src="img/news-tit2.png" alt="">
+                </div>
+                <div class="arrow-down"></div>
+                <ul class="list-group fixed">
+                    <li ms-for="el in @proNews | limitBy(3) as items">
+                        <a ms-attr="{href:'news-details.html?id='+el.id+'&type=2'}">
+                            <div class="img">
+                                <img ms-attr="{src:el.picUrl}" alt="">
+                            </div>
+                            <div class="info">
+                                <div class="title news-list-title">{{@el.title}} </div>
+                                <div class="text news-list-text">
+                                    {{@el.summary}}
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="more"><a ms-attr="{href:'news-list.html?newsType=7&type=2'}">查看更多&gt;</a></div>
+            </div>
+    	</div>
+    	<div class="con-wid item" id="mediaReport">
+    		<div class="tit">
+                <div class="big-title">
+                    <img src="img/news-tit3.png" alt="">
+                </div>
+                <div class="arrow-down"></div>
+    			<div class="media-report">
+    				<div class="news-cover">
+                        <a ms-attr="{href:'news-details.html?id='+@mediaNewsSingle.id+'&type=3'}">
+        					<img ms-attr="{src:@mediaNewsSingle.picUrl}" width="454" height="330">
+        					<h3>{{@mediaNewsSingle.title}}</h3>
+                        </a>
+    				</div>
+    				<div class="report-group">
+		    			<ul class="fixed">
+		    				<li ms-for="el in @mediaNews | limitBy(4,1) as items">
+                                <a ms-attr="{href:'news-details.html?id='+el.id+'&type=3'}">
+    		    					<h3>{{@el.title}}</h3>
+    		    					<span>{{@el.updateTime}}</span>
+                                </a>
+		    				</li>
+		    				<!--<li>-->
+                                <!--<a href="news-details.html">-->
+                                    <!--<h3>北上广深房价持续上涨，新地抓紧布局重点城市</h3>-->
+                                    <!--<span>2017-07-14</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="news-details.html">-->
+                                    <!--<h3>北上广深房价持续上涨，新地抓紧布局重点城市</h3>-->
+                                    <!--<span>2017-07-14</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="news-details.html">-->
+                                    <!--<h3>北上广深房价持续上涨，新地抓紧布局重点城市</h3>-->
+                                    <!--<span>2017-07-14</span>-->
+                                <!--</a>-->
+                            <!--</li>-->
+		    			</ul>
+		    			<div class="more"><a ms-attr="{href:'news-list.html?newsType=8&type=3'}">查看更多&gt;</a></div>
+		    		</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
+	@@include('include/footer.html')
+</body>
+<script src="js/news.js"></script>
+<script>
+    $('#NavNews').addClass('active')
+</script>
+</html>

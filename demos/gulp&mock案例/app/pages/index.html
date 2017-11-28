@@ -1,0 +1,59 @@
+@@include('include/head.html')
+<body>
+    @@include('include/header.html')
+    <div class="warp">
+    	<!-- 轮播图 -->
+		<div id="lunBo" class="swiper-container" ms-controller="lunBo">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide" ms-for="el in @banners">
+					<a ms-attr={href:el.linkUrl}><img class="lunbo-img" ms-attr="{src:el.picUrl}"></a>
+				</div>
+		    </div>
+		    <div class="swiperpn swiper-button-prev"><p><span>1</span> / <i></i></p></div>
+		    <div class="swiperpn swiper-button-next"><p><span>1</span> / <i></i></p></div>
+		    <!-- 如果需要分页器 -->
+		    <!-- <div class="swiper-pagination"></div> -->
+		</div>
+    	<div class="main-home">
+	    	<div class="quick-entry">
+				<ul>
+					<li><a href="about.html#about"><img src='img/home-tit1.png'></a></li>
+					<li><a href="about.html#development"><img src='img/home-tit2.png'></a></li>
+					<li><a href="business.html#estate"><img src='img/home-tit3.png'></a></li>
+					<li><a href="business.html#asset"><img src='img/home-tit4.png'></a></li>
+					<li><a href="join.html#joinUs"><img src='img/home-tit5.png'></a></li>
+				</ul>
+	    	</div>
+	    	<div class="home-news con-wid">
+		    	<div class="news news1" ms-controller="newsh">
+					<h1 class="public-tit"><img src='img/home-tit6.png'></h1>
+					<ul>
+						<li ms-for='($index, el) in @comNews'>
+							<div class='img'  ms-if="$index < 3"><img ms-attr="{src:el.picUrl}"></div>
+							<a ms-if="$index < 3" ms-attr="{href:'news-details.html?id='+ el.id+'&type=1'}">{{el.title | truncate(20,'...')}} </a>
+							<div class='con'  ms-if="$index < 3" ms-html='el.summary'> {{el.summary}}</div>
+						</li>
+					</ul>
+		    	</div>
+		    	<div class="news news2" ms-controller="newsh2">
+					<h1 class="public-tit"><img src='img/home-tit7.png'></h1>
+					<ul>
+						<li ms-for='($index, el) in @comNews'>
+							<div class='img' ms-if="$index < 3"><img ms-attr="{src:el.picUrl}"></div>
+							<a ms-if="$index < 3" ms-attr="{href:'news-details.html?id='+ el.id+'&type=2'}">{{el.title | truncate(20,'...')}} </a>
+							<div class='con' ms-if="$index < 3" ms-html='el.summary'> {{el.summary}}</div>
+						</li>
+					</ul>
+		    	</div>
+	    	</div>
+	    </div>
+    </div>
+	@@include('include/footer.html')
+	<script src="js/swiper-3.4.2.jquery.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
+<script>
+    $('#NavIndex').addClass('active');
+</script>
+
+</html>
